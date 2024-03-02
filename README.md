@@ -1,10 +1,10 @@
-# meme_flask
+# Meme Generator
 
 **Meme Generator Website**
 
 Meme Generator is a web application that displays a fresh meme image from Reddit automatically every 12 seconds.
 
-→ Preview
+→ Preview ←
 
 ![meme_generator.gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXlkdnVwemZpNjhiMzkxdTE2bmk4MHQ3NGZnMTJhYXRhd2U3NWN2dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rHgxJx7Z30vpOzDMHk/giphy.gif)
 
