@@ -4,7 +4,6 @@
 <head>
     <title>Meme Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="12"/>
     <style>
         body {
             background-color: #121212;
@@ -30,6 +29,22 @@
             background-color: #121212;
         }
 
+        table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+        margin-bottom: 20px;
+        }
+
+        th {
+            background-color: white;
+        }
+
+        td {
+            background-color: #d3d3d3;
+            text-align: center;
+        }
+
         button {
             background-color: #d3d3d3;
             color: white;
@@ -45,12 +60,9 @@
 </head>
 
 <body>
-
-    <h1>Welcome to the Meme Generator!</h1>
-    <p>- a new meme will be displayed every 12 seconds -</p>
-    <p><img src="{{meme_pic}}"></p>
-    <p>Current subreddit: {{subreddit}} </p>
-    <button type="button"> <a href="/history">Meme History</a> </button>
+    <h1>Meme History</h1>
+    {{ html_table | safe }}
+    <button type="button"><a href="/">Go back to memes!</a></button>    
 </body>
 
 </html>
