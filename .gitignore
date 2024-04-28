@@ -2,4 +2,3 @@
 /.venv/
 /nginx/
 .dockerignore
-Dockerfile_old

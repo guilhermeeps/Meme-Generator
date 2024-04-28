@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import requests, mysql.connector
 
 mydb = mysql.connector.connect (
-    host='127.0.0.1',
+    host='172.17.0.2',
     user='teste',
     password='teste',
     database='Memegeneratordb',
@@ -17,20 +17,18 @@ def get_meme():
     subreddit = response["subreddit"]
     image_url = response["url"]
     
-    my_cursor = mydb.cursor()
-
     # SQL command to insert data on db
+    my_cursor = mydb.cursor()
     sql = f"INSERT INTO memes (image_url) VALUES ('{image_url}')"
     my_cursor.execute(sql)
     mydb.commit()
 
     return meme_large, subreddit
 
+
 def display_meme_table():
-
-    my_cursor = mydb.cursor()
-
     # Commands to catch all data from the database
+    my_cursor = mydb.cursor()
     my_cursor.execute('SELECT * FROM memes')
     memes_table = my_cursor.fetchall()
 
@@ -45,10 +43,12 @@ def display_meme_table():
 
     return html_table
 
+
 @app.route("/")
 def index():
     meme_pic,subreddit = get_meme()
     return render_template("meme_index.html", meme_pic=meme_pic, subreddit=subreddit)
+
 
 @app.route("/history")
 def history():
